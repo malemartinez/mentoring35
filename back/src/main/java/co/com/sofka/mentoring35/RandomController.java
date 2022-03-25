@@ -1,5 +1,6 @@
 package co.com.sofka.mentoring35;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.stream.Collectors;
@@ -18,7 +19,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping(value = "/r")
+@RequestMapping(value = "/dicesRoller")
 public class RandomController {
 
     private RandomRepository randomRepository;
@@ -32,14 +33,25 @@ public class RandomController {
     public Mono<Random> post(@RequestBody RequestDTO request) {
         return Mono.just(new Random()).map(entity -> {
             entity.setDate(new Date());
-            entity.setOrginalList(request.getList());
+            entity.setNumberDices(request.getDiceNumber());
             return entity;
         }).map(entity -> {
-            var list = Stream.of(request.getList().split(","))
-                .map(p -> p.trim())
-                .collect(Collectors.toList());
-            Collections.shuffle(list);
-            var randomList = list.stream().collect(Collectors.joining(","));
+
+            var lista = new ArrayList<>(request.getDiceNumber());
+            var list = Stream.of(request.getDiceNumber())
+                    .collect(Collectors.toList()).stream()
+                    .map( item -> {
+                        int numberRandom = (int) (Math.random()*(6 - 1+ 1) + 6);
+                        item = numberRandom;
+                                return item;
+                        }
+                    ).collect(Collectors.toList());
+
+
+            //generar numeros aleatorios del 1 al 6
+//            (int)(Math.random()*(HASTA-DESDE+1)+DESDE)
+
+            var randomList = list;
             entity.setRandomList(randomList);
             return entity;
         }).flatMap(randomRepository::save);
