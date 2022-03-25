@@ -1,6 +1,7 @@
 package co.com.sofka.mentoring35;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,11 +12,13 @@ public class Random {
     @Id
     private String id;
 
-    private String orginalList;
+    private Integer numberDices;
 
-    private String randomList;
+//    private Integer orginalList;
 
-    public String getRandomList() {
+    private List<Integer> randomList;
+
+    public  List<Integer> getRandomList() {
         return randomList;
     }
 
@@ -31,20 +34,27 @@ public class Random {
         return id;
     }
 
-    public void setIde(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
+    public Integer getNumberDices() {
+        return numberDices;
+    }
 
-    public String getOrginalList() {
+    public void setNumberDices(Integer numberDices) {
+        this.numberDices = numberDices;
+    }
+
+    /*public Integer getOrginalList() {
         return orginalList;
     }
 
-    public void setOrginalList(String orginalList) {
+    public void setOrginalList(Integer orginalList) {
         this.orginalList = orginalList;
-    }
+    }*/
 
-    public void setRandomList(String randomList) {
+    public void setRandomList(List<Integer> randomList) {
         this.randomList = randomList;
     }
 
