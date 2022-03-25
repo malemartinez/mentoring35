@@ -1,13 +1,13 @@
 package co.com.sofka.mentoring35;
 
 public class RequestDTO {
-    private String list;
+    private Integer diceNumber;
 
-    public String getList() {
-        return list;
+    public Integer getDiceNumber() {
+        return diceNumber;
     }
 
-    public void setList(String list) {
-        this.list = list;
+    public void setDiceNumber(Integer diceNumber) {
+        this.diceNumber = diceNumber;
     }
 }
