@@ -3,21 +3,20 @@ import { connect } from 'react-redux';
 import { fetchRandom } from '../actions';
 
 const From = (props) => {// component stateless
-  const [state, setState] = useState();
+
+  // const [state, setState] = useState();
+
   const onSubmit = (e) => {
     e.preventDefault();
-    props.dispatch(fetchRandom(state));
+    props.dispatch(fetchRandom());
   };
-  return <div>
-    <form onSubmit={onSubmit}>
-      <label htmlFor="list">Ingrese una lista separada por comas:</label>
+
+  return <div >
+    <form onSubmit={onSubmit} className='formContainer'>
+      <label className='labelForm' htmlFor="list">Random Dices </label>
       <br />
-      <textarea id="list" style={{ width: "300px", height: "120px" }} 
-        onChange={(e) => setState(e.target.value)}
-      ></textarea>
-      <br />
-      <button type="submit" disabled={props.loading}>
-        Enviar
+      <button type="submit" disabled={props.loading} className= "buttonForm">
+        Roll dice
       </button>
     </form>
   </div>

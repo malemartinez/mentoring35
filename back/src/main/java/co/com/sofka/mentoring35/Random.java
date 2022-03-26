@@ -14,8 +14,16 @@ public class Random {
 
     private Integer dice1;
     private Integer dice2;
+    private List<Integer>  List;
 
-//    private Integer orginalList;
+    public java.util.List<Integer> getList() {
+        return List;
+    }
+
+    public void setList(java.util.List<Integer> list) {
+        List = list;
+    }
+
 
 
 
