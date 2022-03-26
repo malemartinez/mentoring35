@@ -1,5 +1,13 @@
 # Mentoring dia 35
 
+## Game Roll Dice
+
+
+https://user-images.githubusercontent.com/88175050/160242476-8f9f673f-1425-4608-b744-7c694f3f1082.mp4
+
+
+
+
 ### TEMARIO: 
 
 Para Reactjs (/front)
