@@ -1,10 +1,7 @@
 package co.com.sofka.mentoring35;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,28 +28,12 @@ public class RandomController {
 
     @PostMapping("")
     public Mono<Random> post(@RequestBody RequestDTO request) {
+        Integer valorDado1 = (new java.util.Random().nextInt(6) + 1);
+        Integer valorDado2 = (new java.util.Random().nextInt(6) + 1);
         return Mono.just(new Random()).map(entity -> {
             entity.setDate(new Date());
-            entity.setNumberDices(request.getDiceNumber());
-            return entity;
-        }).map(entity -> {
-
-            var lista = new ArrayList<>(request.getDiceNumber());
-            var list = Stream.of(request.getDiceNumber())
-                    .collect(Collectors.toList()).stream()
-                    .map( item -> {
-                        int numberRandom = (int) (Math.random()*(6 - 1+ 1) + 6);
-                        item = numberRandom;
-                                return item;
-                        }
-                    ).collect(Collectors.toList());
-
-
-            //generar numeros aleatorios del 1 al 6
-//            (int)(Math.random()*(HASTA-DESDE+1)+DESDE)
-
-            var randomList = list;
-            entity.setRandomList(randomList);
+            entity.setDice1(valorDado1);
+            entity.setDice2(valorDado2);
             return entity;
         }).flatMap(randomRepository::save);
     }
@@ -61,4 +42,5 @@ public class RandomController {
     public Flux<Random> get() {
         return randomRepository.findAll();
     }
+
 }

@@ -12,17 +12,14 @@ public class Random {
     @Id
     private String id;
 
-    private Integer numberDices;
+    private Integer dice1;
+    private Integer dice2;
 
 //    private Integer orginalList;
 
-    private List<Integer> randomList;
 
-    public  List<Integer> getRandomList() {
-        return randomList;
-    }
 
-    public Date getDate() {
+   public Date getDate() {
         return date;
     }
 
@@ -38,25 +35,23 @@ public class Random {
         this.id = id;
     }
 
-    public Integer getNumberDices() {
-        return numberDices;
+    public Integer getDice1() {
+        return dice1;
     }
 
-    public void setNumberDices(Integer numberDices) {
-        this.numberDices = numberDices;
+    public void setDice1(Integer dice1) {
+        this.dice1 = dice1;
     }
 
-    /*public Integer getOrginalList() {
-        return orginalList;
+    public Integer getDice2() {
+        return dice2;
     }
 
-    public void setOrginalList(Integer orginalList) {
-        this.orginalList = orginalList;
-    }*/
-
-    public void setRandomList(List<Integer> randomList) {
-        this.randomList = randomList;
+    public void setDice2(Integer dice2) {
+        this.dice2 = dice2;
     }
+
+
 
     
 }
