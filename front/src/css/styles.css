@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Nunito', sans-serif;
+  color: #4a4a4a;
+  height: 100vh;
+  width: 100vw;
+}
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.titleApp{
+  width: 100vw;
+  text-align: center;
+  font-size: 25px;
+  padding: 15px 0px;
+  margin-bottom: 50px;
+  background-color: #f8a89b;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+.labelForm{
+  font-size: 22px;
+  text-align: center;
+}
+.buttonForm{
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8a89b;
+}
+.buttonForm:hover{
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.295), 0 0 0 1px rgb(10 10 10 / 2%);
+  cursor: pointer;
+}
+
+.imageContainer{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.imagen{
+  width: 80px;
+}

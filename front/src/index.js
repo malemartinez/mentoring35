@@ -6,6 +6,7 @@ import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import reducer from './reducers'
 import App from './containers/App'
+import "../src/css/styles.css"
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 const middleware = [ thunk ]
